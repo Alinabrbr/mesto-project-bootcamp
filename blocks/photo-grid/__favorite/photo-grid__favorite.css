@@ -1,0 +1,6 @@
+.photo-grid__favorite {
+  background-image: url("../../../images/vector-love.svg");
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 22px;
+}

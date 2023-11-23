@@ -1,0 +1,13 @@
+.photo-grid__item-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFFFFF;
+  color: #000000;
+  padding: 25px 15px 24.5px 21px;
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: normal;
+  overflow: hidden;
+}
