@@ -1,7 +1,12 @@
+.profile__text {
+  max-width: 336px;
+}
+
 @media (max-width: 880px) {
   .profile__text {
-    margin-top: 22px;
-    margin-bottom: 36px;
+    margin-top: 27px;
+    margin-bottom: 33px;
     padding: 0 19px;
+    max-width: 282px;
   }
 }

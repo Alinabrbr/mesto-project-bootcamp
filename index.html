@@ -10,18 +10,15 @@
 
 </head>
 
-<body class="page page-container">
+<body class="page ">
 
   <header class="header">
-    <div class="header__logo">
-      <img class="header__logo-image" src="images/logo.svg" alt="логотип Место Россия">
-    </div>
+    <div class="header__logo"></div>
   </header>
 
-  <main class="content">
+  <main class="content page-container">
 
-    <section class="profiles">
-      <article class="profile">
+    <section class="profile">
 
         <div class="profile__description">
           <div class="profile__info">
@@ -29,73 +26,106 @@
             <div class="profile__text">
               <div class="profile__text-top-line">
                 <h1 class="profile__title">Жак-Ив Кусто</h1>
-                <div class="profile__edit-button"></div>
+                <button class="profile__edit-button"></button>
               </div>
               <p class="profile__subtitle">Исследователь океана</p>
             </div>
           </div>
-          <div class="profile__add-button">
-            <div class="profile__add-button_vector"></div>
-          </div>
+            <button class="profile__add-button"></button>
         </div>
+    </section>
 
-        <div class="profile__photo-grid">
+    <section class="form">
+      <div class="form__toggle">
+        <img class="form__toggle-image" src="images/closeButton.svg" alt="Кнопка закрыть форму">
+      </div>
+      <div class="form__container">
+        <form class="form__edit-profile">
+          <div class="form__main-container">
+            <h2 class="form__heading">Редактировать профиль</h2>
+            <fieldset class="form__input-container">
+              <label class="form__label" for="name"></label>
+              <input class="form__input" id="name" type="text" placeholder="Жак-Ив Кусто">
+              <label class="form__label" for="status"></label>
+              <input class="form__input" id="status" type="text" placeholder="Исследователь океана">
+            </fieldset>
 
-          <div class="photo-grid__item">
-            <img class="photo-grid__image" src="images/Malaysia.jpg" alt="Малайзия">
-            <div class="photo-grid__item-title">
-              <p class="photo-grid__text">Малайзия</p>
-              <div class="photo-grid__favorite"></div>
-            </div>
+            <fieldset class="form__handler">
+              <button class="form__button">Сохранить</button>
+            </fieldset>
           </div>
+        </form>
+      </div>
+    </section>
 
-          <div class="photo-grid__item">
-            <img class="photo-grid__image" src="images/Singapore.jpg" alt="Сингапур">
+    <section class="cards">
+
+      <ul class="cards__photo-grid">
+
+        <li class="photo-grid__item">
+          <article class="photo-grid__item-container">
+            <img class="photo-grid__image" src="images/Malaysia.jpg" alt="Малайзия город Куала Лумпур">
+            <div class="photo-grid__item-title">
+              <p class="photo-grid__text">Куала Лумпур</p>
+              <button class="photo-grid__favorite"></button>
+            </div>
+          </article>
+        </li>
+
+        <li class="photo-grid__item">
+          <article class="photo-grid__item-container">
+            <img class="photo-grid__image" src="images/Singapore.jpg" alt="Сингапур город Сингапур">
             <div class="photo-grid__item-title">
               <p class="photo-grid__text">Сингапур</p>
-              <div class="photo-grid__favorite"></div>
+              <button class="photo-grid__favorite"></button>
             </div>
-          </div>
+          </article>
+        </li>
 
-          <div class="photo-grid__item">
-            <img class="photo-grid__image" src="images/SouthKorea.jpg" alt="Южная Корея">
+        <li class="photo-grid__item">
+          <article class="photo-grid__item-container">
+            <img class="photo-grid__image" src="images/SouthKorea.jpg" alt="Южная Корея город Сеул">
             <div class="photo-grid__item-title">
-              <p class="photo-grid__text">Южная Корея</p>
-              <div class="photo-grid__favorite"></div>
+              <p class="photo-grid__text">Сеул</p>
+              <button class="photo-grid__favorite"></button>
             </div>
-          </div>
+          </article>
+        </li>
 
-          <div class="photo-grid__item">
-            <img class="photo-grid__image" src="images/Bali.jpg" alt="Бали">
+        <li class="photo-grid__item">
+          <article class="photo-grid__item-container">
+            <img class="photo-grid__image" src="images/Bali.jpg" alt="Индонезия остров Бали">
             <div class="photo-grid__item-title">
               <p class="photo-grid__text">Бали</p>
-              <div class="photo-grid__favorite"></div>
+              <button class="photo-grid__favorite"></button>
             </div>
-          </div>
+          </article>
+        </li>
 
-          <div class="photo-grid__item">
-            <img class="photo-grid__image" src="images/Thailand.jpg" alt="Таиланд">
+        <li class="photo-grid__item">
+          <article class="photo-grid__item-container">
+            <img class="photo-grid__image" src="images/Thailand.jpg" alt="Таиланд город Бангкок">
             <div class="photo-grid__item-title">
-              <p class="photo-grid__text">Таиланд</p>
-              <div class="photo-grid__favorite"></div>
+              <p class="photo-grid__text">Бангкок</p>
+              <button class="photo-grid__favorite"></button>
             </div>
-          </div>
+          </article>
+        </li>
 
-          <div class="photo-grid__item">
-            <img class="photo-grid__image" src="images/Vietnam.jpg" alt="Вьетнам">
+        <li class="photo-grid__item">
+          <article class="photo-grid__item-container">
+            <img class="photo-grid__image" src="images/Vietnam.jpg" alt="Вьетнам город Нячанг">
             <div class="photo-grid__item-title">
-              <p class="photo-grid__text">Вьетнам</p>
-              <div class="photo-grid__favorite"></div>
+              <p class="photo-grid__text">Нячанг</p>
+              <button class="photo-grid__favorite"></button>
             </div>
-          </div>
-
-        </div>
-
-      </article>
+          </article>
+        </li>
+      </ul>
     </section>
   </main>
 
-  <footer class="footer">
+  <footer class="footer page-container">
     <p class="footer__author">&#169; 2023 Mesto Russia</p>
   </footer>
 </body>

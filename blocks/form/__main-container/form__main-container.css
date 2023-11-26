@@ -1,0 +1,12 @@
+.form__main-container {
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  width: 430px;
+  height: 330px;
+  margin: 0 auto;
+  padding: 34px 36px 37px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  box-sizing: border-box;
+}

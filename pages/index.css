@@ -11,6 +11,7 @@
 
 @import url("../blocks/photo-grid/photo-grid.css");
 @import url("../blocks/photo-grid/__item/photo-grid__item.css");
+@import url("../blocks/photo-grid/__item-container/photo-grid__item-container.css");
 @import url("../blocks/photo-grid/__item-title/photo-grid__item-title.css");
 @import url("../blocks/photo-grid/__text/photo-grid__text.css");
 @import url("../blocks/photo-grid/__image/photo-grid__image.css");
@@ -28,8 +29,22 @@
 @import url("../blocks/profile/__subtitle/profile__subtitle.css");
 @import url("../blocks/profile/__edit-button/profile__edit-button.css");
 @import url("../blocks/profile/__add-button/profile__add-button.css");
-@import url("../blocks/profile/__add-button/_vector/profile__add-button_vector.css");
-@import url("../blocks/profile/__photo-grid/profile__photo-grid.css");
+
+@import url("../blocks/cards/cards.css");
+@import url("../blocks/cards/__photo-grid/cards__photo-grid.css");
 
 @import url("../blocks/footer/footer.css");
 @import url("../blocks/footer/__author/footer__author.css");
+
+@import url("../blocks/form/form.css");
+@import url("../blocks/form/__container/form__container.css");
+@import url("../blocks/form/__edit-profile/form__edit-profile.css");
+@import url("../blocks/form/__input-container/form__input-container.css");
+@import url("../blocks/form/__heading/form__heading.css");
+@import url("../blocks/form/__main-container/form__main-container.css");
+@import url("../blocks/form/__label/form__label.css");
+@import url("../blocks/form/__input/form__input.css");
+@import url("../blocks/form/__handler/form__handler.css");
+@import url("../blocks/form/__button/form__button.css");
+@import url("../blocks/form/__toggle/form__toggle.css");
+@import url("../blocks/form/__toggle-image/form__toggle-image.css");

@@ -9,5 +9,6 @@
 @media (max-width: 880px) {
   .profile__description {
     flex-direction: column;
+    margin-bottom: 36px;
   }
 }

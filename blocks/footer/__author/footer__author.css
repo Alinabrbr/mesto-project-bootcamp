@@ -6,3 +6,10 @@
   font-weight: 400;
   line-height: normal;
 }
+
+@media (max-width: 320px) {
+  .footer__author {
+    font-size: 14px;
+    margin-top: 50px;
+  }
+}
