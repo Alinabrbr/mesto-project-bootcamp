@@ -3,3 +3,7 @@
   top: -40px;
   left: 101%;
 }
+
+.form__toggle:hover {
+  opacity: .6;
+}
