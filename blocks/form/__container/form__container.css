@@ -1,9 +1,10 @@
 .form__container {
+  position: relative;
   background-color: #FFF;
   border-radius: 10px;
   width: 430px;
   height: 330px;
-  margin: 0 auto;
+  margin: auto;
   padding: 34px 36px 37px;
   display: flex;
   flex-direction: column;
