@@ -6,8 +6,22 @@
   border-radius: 2px;
   border-style: none;
   padding: 0;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: 19px;
 }
 
 .form__button:hover {
   opacity: 0.8;
+}
+
+@media (max-width: 800px) {
+  .form__button {
+    width: 238px;
+    height: 46px;
+    margin-top: 16px;
+    font-size: 14px;
+  }
 }

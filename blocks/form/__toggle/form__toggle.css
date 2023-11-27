@@ -1,9 +1,25 @@
 .form__toggle {
   position: absolute;
   top: -40px;
-  left: 101%;
+  left: 102%;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  background-color: rgba(0,0,0, 0);
+  border-style: none;
+  background-image: url("../../../images/closeButton.svg");
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .form__toggle:hover {
   opacity: .6;
+}
+
+@media (max-width: 800px) {
+  .form__toggle {
+    background-size: 22px;
+    top: -42px;
+    left: 91%;
+  }
 }

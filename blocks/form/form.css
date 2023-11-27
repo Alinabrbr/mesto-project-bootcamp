@@ -2,5 +2,12 @@
   display: none;
   position: fixed;
   top: 28%;
-  left: 32.5%;
+  left: calc(50% - 430px/2);
+}
+
+@media (max-width: 800px) {
+  .form {
+    left: calc(50% - 282px/2);
+    top: 23.5%
+  }
 }

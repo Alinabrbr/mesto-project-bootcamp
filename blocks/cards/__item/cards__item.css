@@ -1,5 +1,5 @@
-.photo-grid__item {
-  background-color: #FFFFFF;
+.cards__item {
+  background-color: #FFF;
   display: grid;
   /*grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));*/
   /*grid-template-rows: repeat(1, 361px);*/

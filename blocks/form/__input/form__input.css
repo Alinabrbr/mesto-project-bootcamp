@@ -5,10 +5,11 @@
   font-family: 'Inter', sans-serif;
   font-size: 14px;
   font-weight: 400;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 30px;
-  padding: 0 0 13px;
+  /*display: flex;*/
+  /*justify-content: space-between;*/
+  margin-bottom: 29px;
+  padding: 0 0 8px;
+  width: 100%;
 }
 
 ::-webkit-input-placeholder {
