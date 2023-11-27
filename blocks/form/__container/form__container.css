@@ -6,7 +6,6 @@
   margin: 0 auto;
   padding: 34px 36px 37px;
   display: flex;
-  /*justify-content: space-between;*/
   flex-direction: column;
   box-sizing: border-box;
 }

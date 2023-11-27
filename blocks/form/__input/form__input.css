@@ -1,25 +1,23 @@
 .form__input {
   border: none;
   border-bottom: 1px solid rgba(0,0,0, .2);
-  color: #000000;
+  color: #000;
   font-family: 'Inter', sans-serif;
   font-size: 14px;
   font-weight: 400;
-  /*display: flex;*/
-  /*justify-content: space-between;*/
   margin-bottom: 29px;
   padding: 0 0 8px;
   width: 100%;
 }
 
 ::-webkit-input-placeholder {
-  color: #000000;
+  color: #000;
 }
 
 ::-moz-placeholder {
-  color: #000000;
+  color: #000;
 }
 
 :-ms-input-placeholder {
-  color: #000000;
+  color: #000;
 }

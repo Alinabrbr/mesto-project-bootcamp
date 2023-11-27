@@ -1,9 +1,9 @@
 .cards__favorite {
-  background-image: url("favorite.svg");
+  background-image: url("../../../images/favorite.svg");
   background-repeat: no-repeat;
   width: 22px;
   height: 22px;
-  background-color: #FFFFFF;
+  background-color: #FFF;
   border: none;
   padding-inline: 11px;
   cursor: pointer;
@@ -14,6 +14,6 @@
 }
 
 .cards__favorite:active {
-  background-image: url("favorite-active.svg");
+  background-image: url("../../../images/favorite-active.svg");
   opacity: 1;
 }
