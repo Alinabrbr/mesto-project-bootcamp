@@ -1,6 +1,6 @@
 .profile__subtitle {
-  margin-bottom: 0;
-  margin-top: 8px;
+  max-width: 336px;
+  margin: 0;
   font-family: 'Inter', sans-serif;
   font-size: 18px;
   font-weight: 400;
@@ -12,6 +12,7 @@
 
 @media (max-width: 880px) {
   .profile__subtitle {
+    max-width: 282px;
     font-size: 14px;
   }
 }

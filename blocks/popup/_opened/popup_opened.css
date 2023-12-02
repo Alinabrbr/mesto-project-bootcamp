@@ -1,4 +1,4 @@
-.form_opened {
+.popup_opened {
   display: flex;
   position: fixed;
   top: 0;
@@ -9,9 +9,9 @@
   height: 100vh;
 }
 
-@media (max-width: 800px) {
-  .form {
-    left: calc(50% - 282px/2);
-    top: 23.5%
-  }
-}
+/*@media (max-width: 800px) {*/
+/*  .popup {*/
+/*    left: calc(50% - 282px/2);*/
+/*    top: 23.5%*/
+/*  }*/
+/*}*/

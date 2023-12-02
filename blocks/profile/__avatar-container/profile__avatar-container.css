@@ -1,0 +1,13 @@
+.profile__avatar-container {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+}
+
+@media (max-width: 880px) {
+  .profile__avatar-container {
+    width: 125px;
+    height: 125px;
+  }
+}

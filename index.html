@@ -6,6 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="pages/index.css" rel="stylesheet">
+  <script src="index.js" defer></script>
   <title>Mesto</title>
 
 </head>
@@ -23,8 +24,9 @@
     <section class="profile">
 
         <div class="profile__description">
-          <div class="profile__info">
-            <div class="profile__avatar"></div>
+            <div class="profile__avatar-container">
+              <img class="profile__avatar" src="images/avatar.jpg" alt="Мое фото">
+            </div>
             <div class="profile__text">
               <div class="profile__text-top-line">
                 <h1 class="profile__title">Жак-Ив Кусто</h1>
@@ -32,74 +34,79 @@
               </div>
               <p class="profile__subtitle">Исследователь океана</p>
             </div>
-          </div>
-            <button class="profile__add-button" type="button"></button>
         </div>
+      <button class="profile__add-button" type="button"></button>
     </section>
 
     <section class="cards">
 
       <ul class="cards__list">
 
-        <li class="cards__item">
-          <article class="cards__item-container">
-            <img class="cards__image" src="images/Malaysia.jpg" alt="Малайзия город Куала Лумпур">
-            <div class="cards__item-title">
-              <h2 class="cards__text">Куала Лумпур</h2>
-              <button class="cards__favorite" type="button"></button>
+        <li class="card__item">
+          <article class="card__item-container">
+            <button class="card__exit-button" type="button"></button>
+            <img class="card__image" src="images/Malaysia.jpg" alt="Малайзия город Куала Лумпур">
+            <div class="card__item-title">
+              <h2 class="card__text">Куала Лумпур</h2>
+              <button class="card__favorite" type="button"></button>
             </div>
           </article>
         </li>
 
-        <li class="cards__item">
-          <article class="cards__item-container">
-            <img class="cards__image" src="images/Singapore.jpg" alt="Сингапур город Сингапур">
-            <div class="cards__item-title">
-              <h2 class="cards__text">Сингапур</h2>
-              <button class="cards__favorite" type="button"></button>
-            </div>
-          </article>
-        </li>
+<!--        <li class="cards__item">-->
+<!--          <button class="cards__exit-button" type="button"></button>-->
+<!--          <article class="cards__item-container">-->
+<!--            <img class="cards__image" src="images/Singapore.jpg" alt="Сингапур город Сингапур">-->
+<!--            <div class="cards__item-title">-->
+<!--              <h2 class="cards__text">Сингапур</h2>-->
+<!--              <button class="cards__favorite" type="button"></button>-->
+<!--            </div>-->
+<!--          </article>-->
+<!--        </li>-->
 
-        <li class="cards__item">
-          <article class="cards__item-container">
-            <img class="cards__image" src="images/SouthKorea.jpg" alt="Южная Корея город Сеул">
-            <div class="cards__item-title">
-              <h2 class="cards__text">Сеул</h2>
-              <button class="cards__favorite" type="button"></button>
-            </div>
-          </article>
-        </li>
+<!--        <li class="cards__item">-->
+<!--          <button class="cards__exit-button" type="button"></button>-->
+<!--          <article class="cards__item-container">-->
+<!--            <img class="cards__image" src="images/SouthKorea.jpg" alt="Южная Корея город Сеул">-->
+<!--            <div class="cards__item-title">-->
+<!--              <h2 class="cards__text">Сеул</h2>-->
+<!--              <button class="cards__favorite" type="button"></button>-->
+<!--            </div>-->
+<!--          </article>-->
+<!--        </li>-->
 
-        <li class="cards__item">
-          <article class="cards__item-container">
-            <img class="cards__image" src="images/Bali.jpg" alt="Индонезия остров Бали">
-            <div class="cards__item-title">
-              <h2 class="cards__text">Бали</h2>
-              <button class="cards__favorite" type="button"></button>
-            </div>
-          </article>
-        </li>
+<!--        <li class="cards__item">-->
+<!--          <button class="cards__exit-button" type="button"></button>-->
+<!--          <article class="cards__item-container">-->
+<!--            <img class="cards__image" src="images/Bali.jpg" alt="Индонезия остров Бали">-->
+<!--            <div class="cards__item-title">-->
+<!--              <h2 class="cards__text">Бали</h2>-->
+<!--              <button class="cards__favorite" type="button"></button>-->
+<!--            </div>-->
+<!--          </article>-->
+<!--        </li>-->
 
-        <li class="cards__item">
-          <article class="cards__item-container">
-            <img class="cards__image" src="images/Thailand.jpg" alt="Таиланд город Бангкок">
-            <div class="cards__item-title">
-              <h2 class="cards__text">Бангкок</h2>
-              <button class="cards__favorite" type="button"></button>
-            </div>
-          </article>
-        </li>
+<!--        <li class="cards__item">-->
+<!--          <button class="cards__exit-button" type="button"></button>-->
+<!--          <article class="cards__item-container">-->
+<!--            <img class="cards__image" src="images/Thailand.jpg" alt="Таиланд город Бангкок">-->
+<!--            <div class="cards__item-title">-->
+<!--              <h2 class="cards__text">Бангкок</h2>-->
+<!--              <button class="cards__favorite" type="button"></button>-->
+<!--            </div>-->
+<!--          </article>-->
+<!--        </li>-->
 
-        <li class="cards__item">
-          <article class="cards__item-container">
-            <img class="cards__image" src="images/Vietnam.jpg" alt="Вьетнам город Нячанг">
-            <div class="cards__item-title">
-              <h2 class="cards__text">Нячанг</h2>
-              <button class="cards__favorite" type="button"></button>
-            </div>
-          </article>
-        </li>
+<!--        <li class="cards__item">-->
+<!--          <button class="cards__exit-button" type="button"></button>-->
+<!--          <article class="cards__item-container">-->
+<!--            <img class="cards__image" src="images/Vietnam.jpg" alt="Вьетнам город Нячанг">-->
+<!--            <div class="cards__item-title">-->
+<!--              <h2 class="cards__text">Нячанг</h2>-->
+<!--              <button class="cards__favorite" type="button"></button>-->
+<!--            </div>-->
+<!--          </article>-->
+<!--        </li>-->
       </ul>
     </section>
   </main>
@@ -108,24 +115,43 @@
     <p class="footer__author">&copy; 2023 Mesto Russia</p>
   </footer>
 
-  <div>
+<div class="popup" id="edit-profile">
+  <div class="popup__container">
+    <button class="popup__exit-btn" type="button"></button>
+    <h2 class="popup__heading">Редактировать профиль</h2>
+    <form class="popup__form" name="formEditProfile">
+      <input class="popup__input" id="name" type="text" placeholder="Полное имя" name="fullName">
+      <input class="popup__input" id="job" type="text" placeholder="Род деятельности" name="job">
 
+      <button class="popup__save-btn" type="submit">Сохранить</button>
+    </form>
   </div>
-  <div class="form">
-    <div class="form__container">
-      <button class="form__toggle"></button>
-      <h2 class="form__heading">Редактировать профиль</h2>
-      <label class="form__label" for="name"></label>
-      <label class="form__label" for="status"></label>
-      <form class="form__edit-profile" name="formEditProfile">
-        <input class="form__input" id="name" type="text" placeholder="Жак-Ив Кусто" name="fullName">
-        <input class="form__input" id="status" type="text" placeholder="Исследователь океана" name="status">
+</div>
 
-        <button class="form__button" type="submit">Сохранить</button>
-      </form>
-    </div>
+<div class="popup" id="add-card">
+  <div class="popup__container">
+    <button class="popup__exit-btn" type="button"></button>
+    <h2 class="popup__heading">Новое место</h2>
+    <form class="popup__form" name="formAddCard">
+      <input class="popup__input" id="place" type="text" placeholder="Название" name="place">
+      <input class="popup__input" id="link" type="text" placeholder="Ссылка на картинку" name="link">
+
+      <button class="popup__save-btn" type="submit">Создать</button>
+    </form>
   </div>
+</div>
 
+<template id="template-card">
+  <li class="card__item">
+    <article class="card__item-container">
+      <button class="card__exit-button" type="button"></button>
+      <img class="card__image" src="images/Malaysia.jpg" alt="Малайзия город Куала Лумпур">
+      <div class="card__item-title">
+        <h2 class="card__text">Куала Лумпур</h2>
+        <button class="card__favorite" type="button"></button>
+      </div>
+    </article>
+  </li>
+</template>
 </body>
-<script src="index.js"></script>
 </html>

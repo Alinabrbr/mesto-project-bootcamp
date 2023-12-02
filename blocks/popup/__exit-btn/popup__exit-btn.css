@@ -1,4 +1,4 @@
-.form__toggle {
+.popup__exit-btn {
   position: absolute;
   top: -40px;
   left: 102%;
@@ -12,12 +12,12 @@
   background-repeat: no-repeat;
 }
 
-.form__toggle:hover {
+.popup__exit-btn:hover {
   opacity: .6;
 }
 
 @media (max-width: 800px) {
-  .form__toggle {
+  .popup__exit-btn {
     background-size: 22px;
     top: -42px;
     left: 91%;

@@ -1,5 +1,5 @@
-.cards__image {
-  width: 100%;
+.card__image {
+  width: 282px;
   object-fit: cover;
   aspect-ratio: 1/1;
 }
