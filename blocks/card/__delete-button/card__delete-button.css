@@ -1,4 +1,4 @@
-.card__exit-button {
+.card__delete-button {
   background-image: url("../../../images/trashButton.svg");
   position: absolute;
   width: 18px;
@@ -8,4 +8,9 @@
   background-color: rgba(0,0,0, 0);
   top: 20px;
   right: 20px;
+}
+
+.card__delete-button:hover {
+  opacity: .6;
+  cursor: pointer;
 }

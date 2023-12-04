@@ -2,8 +2,8 @@
   position: relative;
   background-color: #FFF;
   border-radius: 10px;
-  width: 430px;
-  height: 330px;
+  max-width: 430px;
+  max-height: 330px;
   margin: auto;
   padding: 34px 36px 37px;
   display: flex;
@@ -13,8 +13,8 @@
 
 @media (max-width: 800px) {
   .popup__container {
-    width: 282px;
-    height: 322px;
+    max-width: 282px;
+    max-height: 322px;
     padding: 25px 22px;
   }
 }

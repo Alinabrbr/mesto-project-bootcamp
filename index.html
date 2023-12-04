@@ -29,10 +29,10 @@
             </div>
             <div class="profile__text">
               <div class="profile__text-top-line">
-                <h1 class="profile__title">Жак-Ив Кусто</h1>
+                <h1 class="profile__title">Алина Абрашкина</h1>
                 <button class="profile__edit-button" type="button"></button>
               </div>
-              <p class="profile__subtitle">Исследователь океана</p>
+              <p class="profile__subtitle">Исследователь долин frontend-разработки</p>
             </div>
         </div>
       <button class="profile__add-button" type="button"></button>
@@ -41,72 +41,6 @@
     <section class="cards">
 
       <ul class="cards__list">
-
-        <li class="card__item">
-          <article class="card__item-container">
-            <button class="card__exit-button" type="button"></button>
-            <img class="card__image" src="images/Malaysia.jpg" alt="Малайзия город Куала Лумпур">
-            <div class="card__item-title">
-              <h2 class="card__text">Куала Лумпур</h2>
-              <button class="card__favorite" type="button"></button>
-            </div>
-          </article>
-        </li>
-
-<!--        <li class="cards__item">-->
-<!--          <button class="cards__exit-button" type="button"></button>-->
-<!--          <article class="cards__item-container">-->
-<!--            <img class="cards__image" src="images/Singapore.jpg" alt="Сингапур город Сингапур">-->
-<!--            <div class="cards__item-title">-->
-<!--              <h2 class="cards__text">Сингапур</h2>-->
-<!--              <button class="cards__favorite" type="button"></button>-->
-<!--            </div>-->
-<!--          </article>-->
-<!--        </li>-->
-
-<!--        <li class="cards__item">-->
-<!--          <button class="cards__exit-button" type="button"></button>-->
-<!--          <article class="cards__item-container">-->
-<!--            <img class="cards__image" src="images/SouthKorea.jpg" alt="Южная Корея город Сеул">-->
-<!--            <div class="cards__item-title">-->
-<!--              <h2 class="cards__text">Сеул</h2>-->
-<!--              <button class="cards__favorite" type="button"></button>-->
-<!--            </div>-->
-<!--          </article>-->
-<!--        </li>-->
-
-<!--        <li class="cards__item">-->
-<!--          <button class="cards__exit-button" type="button"></button>-->
-<!--          <article class="cards__item-container">-->
-<!--            <img class="cards__image" src="images/Bali.jpg" alt="Индонезия остров Бали">-->
-<!--            <div class="cards__item-title">-->
-<!--              <h2 class="cards__text">Бали</h2>-->
-<!--              <button class="cards__favorite" type="button"></button>-->
-<!--            </div>-->
-<!--          </article>-->
-<!--        </li>-->
-
-<!--        <li class="cards__item">-->
-<!--          <button class="cards__exit-button" type="button"></button>-->
-<!--          <article class="cards__item-container">-->
-<!--            <img class="cards__image" src="images/Thailand.jpg" alt="Таиланд город Бангкок">-->
-<!--            <div class="cards__item-title">-->
-<!--              <h2 class="cards__text">Бангкок</h2>-->
-<!--              <button class="cards__favorite" type="button"></button>-->
-<!--            </div>-->
-<!--          </article>-->
-<!--        </li>-->
-
-<!--        <li class="cards__item">-->
-<!--          <button class="cards__exit-button" type="button"></button>-->
-<!--          <article class="cards__item-container">-->
-<!--            <img class="cards__image" src="images/Vietnam.jpg" alt="Вьетнам город Нячанг">-->
-<!--            <div class="cards__item-title">-->
-<!--              <h2 class="cards__text">Нячанг</h2>-->
-<!--              <button class="cards__favorite" type="button"></button>-->
-<!--            </div>-->
-<!--          </article>-->
-<!--        </li>-->
       </ul>
     </section>
   </main>
@@ -114,6 +48,16 @@
   <footer class="footer page-container">
     <p class="footer__author">&copy; 2023 Mesto Russia</p>
   </footer>
+
+  <div class="popup" id="opened-image">
+    <div class="popup__container popup__container_type_image">
+      <button class="popup__exit-btn" type="button"></button>
+      <figure class="popup__image-container">
+        <img class="popup__image" src="" alt="">
+        <figcaption class="popup__title"></figcaption>
+      </figure>
+    </div>
+  </div>
 
 <div class="popup" id="edit-profile">
   <div class="popup__container">
@@ -142,13 +86,13 @@
 </div>
 
 <template id="template-card">
-  <li class="card__item">
-    <article class="card__item-container">
-      <button class="card__exit-button" type="button"></button>
-      <img class="card__image" src="images/Malaysia.jpg" alt="Малайзия город Куала Лумпур">
+  <li class="cards__item">
+    <article class="card">
+      <button class="card__delete-button" type="button"></button>
+      <img class="card__image" src="" alt="">
       <div class="card__item-title">
-        <h2 class="card__text">Куала Лумпур</h2>
-        <button class="card__favorite" type="button"></button>
+        <h2 class="card__text"></h2>
+        <button class="card__favorite-button" type="button"></button>
       </div>
     </article>
   </li>

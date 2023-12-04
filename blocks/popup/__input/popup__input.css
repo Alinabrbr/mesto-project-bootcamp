@@ -6,8 +6,9 @@
   font-size: 14px;
   font-weight: 400;
   margin-bottom: 29px;
-  padding: 0 0 8px;
+  padding: 8px 0 8px;
   width: 100%;
+  box-sizing: border-box;
 }
 
 ::-webkit-input-placeholder {

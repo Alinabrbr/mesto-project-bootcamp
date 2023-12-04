@@ -1,17 +1,5 @@
 .popup_opened {
   display: flex;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, .5);
-  z-index: 3000;
-  width: 100vw;
-  height: 100vh;
+  visibility: visible;
+  opacity: 1;
 }
-
-/*@media (max-width: 800px) {*/
-/*  .popup {*/
-/*    left: calc(50% - 282px/2);*/
-/*    top: 23.5%*/
-/*  }*/
-/*}*/
