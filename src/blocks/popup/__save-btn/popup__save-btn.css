@@ -10,11 +10,18 @@
   font-family: 'Inter', sans-serif;
   font-size: 18px;
   font-weight: 400;
-  margin-top: 19px;
+  margin-top: 18px;
 }
 
 .popup__save-btn:hover {
   opacity: 0.8;
+}
+
+.popup__save-btn:disabled {
+  border: 1px solid #000;
+  background-color: #fff;
+  cursor: auto;
+  color: #000;
 }
 
 @media (max-width: 800px) {
