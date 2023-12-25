@@ -1,7 +1,9 @@
-import {openPopupOnClickImage} from './modal';
+import {openPopupOnClickImage} from './modal.js';
+import {getInitialCards} from './api.js';
 
 const cardTemplate = document.getElementById('template-card').content.querySelector('.cards__item');
 const containerCards = document.querySelector('.cards__list');
+const likes = document.querySelector('.card__favorite-counter');
 
 export function createCard(card) {
     const newCard = cardTemplate.cloneNode(true);
@@ -34,33 +36,44 @@ export function addCard(card) {
 }
 
 export function createInitialCards () {
-    const initialCards = [
-        {
-            name: 'Куала Лумпур',
-            link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-        },
-        {
-            name: 'Сингапур',
-            link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-        },
-        {
-            name: 'Сеул',
-            link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-        },
-        {
-            name: 'Бали',
-            link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-        },
-        {
-            name: 'Бангкок',
-            link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-        },
-        {
-            name: 'Нячанг',
-            link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-        }
-    ];
-    initialCards.forEach((card) => {
-        addCard(createCard(card));
-    });
+    getInitialCards()
+        .then((data) => {
+            data.reverse().forEach((card) => {
+                addCard(createCard(card));
+            });
+        })
+        .catch((err) => {
+            console.log(err);
+        })
 }
+// export function createInitialCards () {
+//     const initialCards = [
+//         {
+//             name: 'Куала Лумпур',
+//             link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+//         },
+//         {
+//             name: 'Сингапур',
+//             link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+//         },
+//         {
+//             name: 'Сеул',
+//             link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+//         },
+//         {
+//             name: 'Бали',
+//             link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+//         },
+//         {
+//             name: 'Бангкок',
+//             link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+//         },
+//         {
+//             name: 'Нячанг',
+//             link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+//         }
+//     ];
+//     initialCards.forEach((card) => {
+//         addCard(createCard(card));
+//     });
+// }

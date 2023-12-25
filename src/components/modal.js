@@ -1,6 +1,17 @@
-import {addCard, createCard} from './card';
-import {enableValidation} from "./validate.js";
-import {popupOpenedImage, nameProfile, jobProfile, nameInput, jobInput, popupEditProfile, formElementAddCard, popupAddCard} from "./utils";
+import {addCard, createCard} from './card.js';
+import {enableValidation} from './validate.js';
+import {
+    popupOpenedImage,
+    nameProfile,
+    jobProfile,
+    nameInput,
+    jobInput,
+    popupEditProfile,
+    formElementAddCard,
+    popupAddCard,
+    avatarProfile
+} from './utils.js';
+import {getInitialProfile, postCreatedCard, postEditProfileInfo} from './api.js';
 
 const inputNamePlaceCard = document.getElementById('place');
 const inputImgCard = document.getElementById('link');
@@ -18,24 +29,46 @@ export function closePopup(popup) {
     document.removeEventListener('keydown', closeByEsc);
 }
 
+export function createInitialProfile() {
+    getInitialProfile()
+        .then((data) => {
+            nameProfile.textContent = data.name;
+            jobProfile.textContent = data.about;
+            avatarProfile.src = data.avatar;
+            closePopup(popupEditProfile);
+        })
+        .catch((err) => {
+            console.log(err);
+        })
+}
+
 export function handleEditProfileFormSubmit(evt) {
     evt.preventDefault();
-    nameProfile.textContent = nameInput.value;
-    jobProfile.textContent = jobInput.value;
-    closePopup(popupEditProfile);
+    postEditProfileInfo(nameInput.value, jobInput.value)
+        .then((data) => {
+            nameProfile.textContent = data.name;
+            jobProfile.textContent = data.about;
+            closePopup(popupEditProfile);
+        })
+        .catch((err) => {
+            console.log(err);
+        })
 }
 
 export function handleAddCardFormSubmit(evt) {
     evt.preventDefault();
-    addCard(createCard({
-        name: inputNamePlaceCard.value,
-        link: inputImgCard.value
-    }));
-    formElementAddCard.reset();
-    closePopup(popupAddCard);
+    postCreatedCard(inputNamePlaceCard.value, inputImgCard.value)
+        .then((res) => {
+            addCard(createCard(res));
+            formElementAddCard.reset();
+            closePopup(popupAddCard);
+        })
+        .catch((err) => {
+            console.log(err);
+        })
 }
 
- export function openPopupOnClickImage(card) {
+export function openPopupOnClickImage(card) {
     openedImage.src = card.link;
     openedImage.alt = card.name;
     openedTitle.textContent = card.name;
@@ -49,14 +82,14 @@ function closeByEsc(evt) {
     }
 }
 
-function closePopupOverlay (popup) {
+function closePopupOverlay(popup) {
     closePopup(popup);
 }
 
 const popupsOverlay = document.querySelectorAll('.popup');
 popupsOverlay.forEach(popup => {
     popup.addEventListener('mousedown', (evt) => {
-        if(evt.target.classList.contains('popup')) {
+        if (evt.target.classList.contains('popup')) {
             closePopupOverlay(popup);
         }
     });

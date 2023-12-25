@@ -7,6 +7,7 @@ export const nameInput = document.getElementById('name');
 export const nameProfile = document.querySelector('.profile__title');
 export const jobInput = document.getElementById('job');
 export const jobProfile = document.querySelector('.profile__subtitle');
+export const avatarProfile = document.querySelector('.profile__avatar');
 
 export const buttonAddCard = document.querySelector('.profile__add-button');
 export const formElementAddCard = popupAddCard.querySelector('.popup__form');

@@ -1,9 +1,10 @@
 import './pages/index.css';
-import {enableValidation} from "./components/validate.js";
-import {createInitialCards} from "./components/card.js";
-import {handleEditProfileFormSubmit, handleAddCardFormSubmit, openPopup, closePopup} from "./components/modal";
-import {popupEditProfile, popupAddCard, popupOpenedImage, nameInput, nameProfile, jobInput, jobProfile, formElementEditProfile, buttonCloseEditProfile, buttonEditProfile, buttonAddCard, buttonCloseAddCard, formElementAddCard, buttonCloseImage} from "./components/utils";
+import {enableValidation} from './components/validate.js';
+import {createInitialCards} from './components/card.js';
+import {handleEditProfileFormSubmit, handleAddCardFormSubmit, openPopup, closePopup, createInitialProfile} from './components/modal.js';
+import {popupEditProfile, popupAddCard, popupOpenedImage, nameInput, nameProfile, jobInput, jobProfile, formElementEditProfile, buttonCloseEditProfile, buttonEditProfile, buttonAddCard, buttonCloseAddCard, formElementAddCard, buttonCloseImage} from './components/utils.js';
 
+createInitialProfile()
 createInitialCards();
 enableValidation();
 

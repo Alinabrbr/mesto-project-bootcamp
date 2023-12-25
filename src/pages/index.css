@@ -29,6 +29,7 @@
 @import url("../blocks/card/__image/card__image.css");
 @import url("../blocks/card/__favorite-button/card__favorite-button.css");
 @import url("../blocks/card/__favorite-button/_active/card__favorite-button_active.css");
+@import url("../blocks/card/__favorite-counter/card__favorite-counter.css");
 @import url("../blocks/card/__delete-button/card__delete-button.css");
 
 @import url("../blocks/footer/__author/footer__author.css");
