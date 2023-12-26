@@ -10,7 +10,10 @@ import {
     popupEditProfile,
     formElementAddCard,
     popupAddCard,
-    avatarProfile, popupEditAvatar
+    avatarProfile,
+    popupEditAvatar,
+    buttonSaveEditProfile,
+    buttonSaveAddCard, buttonSaveEditAvatar
 } from './utils.js';
 
 import {getInitialProfile, patchEditAvatar, postCreatedCard, postEditProfileInfo} from './api.js';
@@ -46,11 +49,13 @@ export function createInitialProfile() {
 }
 
 export function handleEditProfileFormSubmit(evt) {
+    buttonSaveEditProfile.textContent = "Сохранение...";
     evt.preventDefault();
     postEditProfileInfo(nameInput.value, jobInput.value)
         .then((data) => {
             nameProfile.textContent = data.name;
             jobProfile.textContent = data.about;
+            buttonSaveEditProfile.textContent = "Сохранить";
             closePopup(popupEditProfile);
         })
         .catch((err) => {
@@ -59,6 +64,7 @@ export function handleEditProfileFormSubmit(evt) {
 }
 
 export function handleEditAvatarFormSubmit(evt) {
+    buttonSaveEditAvatar.textContent = " Сохранение..."
     evt.preventDefault();
     console.log(avatarProfile);
     console.log(evt);
@@ -66,7 +72,7 @@ export function handleEditAvatarFormSubmit(evt) {
         .then((res) => {
             avatarProfile.src = res.avatar;
             closePopup(popupEditAvatar);
-            console.log(avatarProfile.src);
+            buttonSaveEditAvatar.textContent = " Сохранить"
         })
         .catch((err) => {
             console.log(err);
@@ -74,12 +80,14 @@ export function handleEditAvatarFormSubmit(evt) {
 }
 
 export function handleAddCardFormSubmit(evt) {
+    buttonSaveAddCard.textContent = "Создание...";
     evt.preventDefault();
     postCreatedCard(inputNamePlaceCard.value, inputImgCard.value)
         .then((res) => {
             addCard(createCard(res));
             formElementAddCard.reset();
             closePopup(popupAddCard);
+            buttonSaveAddCard.textContent = "Создать";
         })
         .catch((err) => {
             console.log(err);
