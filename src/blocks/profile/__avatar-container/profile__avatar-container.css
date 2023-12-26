@@ -3,6 +3,7 @@
   width: 120px;
   height: 120px;
   overflow: hidden;
+  position: relative;
 }
 
 @media (max-width: 880px) {

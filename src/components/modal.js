@@ -1,5 +1,6 @@
 import {addCard, createCard} from './card.js';
 import {enableValidation} from './validate.js';
+
 import {
     popupOpenedImage,
     nameProfile,
@@ -9,14 +10,16 @@ import {
     popupEditProfile,
     formElementAddCard,
     popupAddCard,
-    avatarProfile
+    avatarProfile, popupEditAvatar
 } from './utils.js';
-import {getInitialProfile, postCreatedCard, postEditProfileInfo} from './api.js';
+
+import {getInitialProfile, patchEditAvatar, postCreatedCard, postEditProfileInfo} from './api.js';
 
 const inputNamePlaceCard = document.getElementById('place');
 const inputImgCard = document.getElementById('link');
 const openedImage = popupOpenedImage.querySelector('.popup__image');
 const openedTitle = popupOpenedImage.querySelector('.popup__title');
+const inputLinkAvatar = document.getElementById('link-avatar');
 
 export function openPopup(popup) {
     popup.classList.add('popup_opened');
@@ -49,6 +52,21 @@ export function handleEditProfileFormSubmit(evt) {
             nameProfile.textContent = data.name;
             jobProfile.textContent = data.about;
             closePopup(popupEditProfile);
+        })
+        .catch((err) => {
+            console.log(err);
+        })
+}
+
+export function handleEditAvatarFormSubmit(evt) {
+    evt.preventDefault();
+    console.log(avatarProfile);
+    console.log(evt);
+    patchEditAvatar(inputLinkAvatar.value)
+        .then((res) => {
+            avatarProfile.src = res.avatar;
+            closePopup(popupEditAvatar);
+            console.log(avatarProfile.src);
         })
         .catch((err) => {
             console.log(err);

@@ -31,10 +31,6 @@ export const postCreatedCard = (name, link) => {
         .then(checkResponseAPI)
 }
 
-// export const deleteCard = (id) => {
-//
-// }
-
 export const getInitialProfile = () => {
     return fetch(`${config.baseUrl}/users/me`, {
         method: 'GET',
@@ -51,4 +47,42 @@ export const postEditProfileInfo = (name, about) => {
     })
         .then(checkResponseAPI)
 }
+
+export const putFavoriteButton = (cardId) => {
+    return fetch(`${config.baseUrl}/cards/likes/${cardId}`, {
+        headers: config.headers,
+        method: 'PUT',
+        body: JSON.stringify({likes: cardId})
+    })
+        .then(checkResponseAPI)
+}
+
+export const deleteFavoriteButton = (cardId) => {
+    return fetch(`${config.baseUrl}/cards/likes/${cardId}`, {
+        headers: config.headers,
+        method: 'DELETE',
+        body: JSON.stringify({likes: cardId})
+    })
+        .then(checkResponseAPI)
+}
+
+export const patchEditAvatar = (link) => {
+    return fetch(`${config.baseUrl}/users/me/avatar`, {
+        headers: config.headers,
+        method: 'PATCH',
+        body: JSON.stringify({avatar: link})
+    })
+        .then(checkResponseAPI)
+}
+
+export const deleteCard = (cardId) => {
+    return fetch(`${config.baseUrl}/cards/${cardId}`, {
+        headers: config.headers,
+        method: 'DELETE',
+        body: JSON.stringify({card: cardId})
+    })
+        .then(checkResponseAPI)
+}
+
+
 
