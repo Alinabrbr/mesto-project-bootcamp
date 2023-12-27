@@ -1,11 +1,10 @@
 import {openPopupOnClickImage} from './modal.js';
-import {deleteCard, deleteFavoriteButton, getInitialCards, putFavoriteButton} from './api.js';
+import {deleteCard, deleteFavoriteButton, putFavoriteButton} from './api.js';
 
 const cardTemplate = document.getElementById('template-card').content.querySelector('.cards__item');
 const containerCards = document.querySelector('.cards__list');
-const userID = 'e5f6768b39a8d75be758ba67';
 
-export function createCard(card) {
+export function createCard(card, userId) {
     const newCard = cardTemplate.cloneNode(true);
     const imgCard = newCard.querySelector('.card__image');
     const namePlaceCard = newCard.querySelector('.card__text');
@@ -17,7 +16,7 @@ export function createCard(card) {
     imgCard.alt = card.name;
     namePlaceCard.textContent = card.name;
 
-    if (card.likes.some((item) => item._id === userID)) {
+    if (card.likes.some((item) => item._id === userId)) {
         buttonFavorite.classList.add('card__favorite-button_active');
     }
 
@@ -45,7 +44,7 @@ export function createCard(card) {
             })
     });
 
-    if (card.owner._id !== userID) {
+    if (card.owner._id !== userId) {
         buttonDeleteCard.remove()
     }
 
@@ -73,15 +72,9 @@ export function addCard(card) {
     containerCards.prepend(card);
 }
 
-export function createInitialCards() {
-    getInitialCards()
-        .then((data) => {
-            data.reverse().forEach((card) => {
-                addCard(createCard(card));
-            });
-        })
-        .catch((err) => {
-            console.log(err);
-        })
+export function createInitialCards(cards, userId) {
+    cards.reverse().forEach((card) => {
+        addCard(createCard(card, userId));
+    });
 }
 

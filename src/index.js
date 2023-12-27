@@ -32,11 +32,26 @@ import {
     popupEditAvatar,
     buttonClosePopupEditAvatar,
     formElementEditAvatar
-} from './components/utils.js';
+} from './components/constants.js';
+import {getInitialCards, getInitialProfile} from "./components/api";
 
-createInitialProfile()
-createInitialCards();
-enableValidation();
+let userId;
+
+Promise.all([getInitialProfile(), getInitialCards()])
+    .then(([userData, cards]) => {
+        userId = userData._id;
+        createInitialProfile(userData);
+        createInitialCards(cards, userId);
+    })
+    .catch(console.error);
+
+enableValidation({
+    formSelector: '.popup__form',
+    inputSelector: '.popup__input',
+    submitButtonSelector: '.popup__save-btn',
+    inactiveButtonClass: 'popup__save-btn:disabled',
+    inputErrorClass: 'popup__input_type_error'
+});
 
 formElementEditProfile.addEventListener('submit', handleEditProfileFormSubmit);
 buttonCloseEditProfile.addEventListener('click', () => closePopup(popupEditProfile));

@@ -1,5 +1,4 @@
 import {addCard, createCard} from './card.js';
-import {enableValidation} from './validate.js';
 
 import {
     popupOpenedImage,
@@ -12,11 +11,11 @@ import {
     popupAddCard,
     avatarProfile,
     popupEditAvatar,
-    buttonSaveEditProfile,
-    buttonSaveAddCard, buttonSaveEditAvatar
-} from './utils.js';
+} from './constants.js';
 
-import {getInitialProfile, patchEditAvatar, postCreatedCard, postEditProfileInfo} from './api.js';
+import {patchEditAvatar, postCreatedCard, postEditProfileInfo} from './api.js';
+
+import {enableValidation} from './validate.js';
 
 const inputNamePlaceCard = document.getElementById('place');
 const inputImgCard = document.getElementById('link');
@@ -27,7 +26,6 @@ const inputLinkAvatar = document.getElementById('link-avatar');
 export function openPopup(popup) {
     popup.classList.add('popup_opened');
     document.addEventListener('keydown', closeByEsc);
-    enableValidation();
 }
 
 export function closePopup(popup) {
@@ -35,36 +33,29 @@ export function closePopup(popup) {
     document.removeEventListener('keydown', closeByEsc);
 }
 
-export function createInitialProfile() {
-    getInitialProfile()
-        .then((data) => {
-            nameProfile.textContent = data.name;
-            jobProfile.textContent = data.about;
-            avatarProfile.src = data.avatar;
-            closePopup(popupEditProfile);
-        })
-        .catch((err) => {
-            console.log(err);
-        })
+export function createInitialProfile(data) {
+    nameProfile.textContent = data.name;
+    jobProfile.textContent = data.about;
+    avatarProfile.src = data.avatar;
 }
 
 export function handleEditProfileFormSubmit(evt) {
-    buttonSaveEditProfile.textContent = "Сохранение...";
+    evt.submitter.textContent = "Сохранение...";
     evt.preventDefault();
     postEditProfileInfo(nameInput.value, jobInput.value)
         .then((data) => {
             nameProfile.textContent = data.name;
             jobProfile.textContent = data.about;
-            buttonSaveEditProfile.textContent = "Сохранить";
             closePopup(popupEditProfile);
         })
-        .catch((err) => {
-            console.log(err);
-        })
+        .catch(console.error)
+        .finally(() => {
+            evt.submitter.textContent = "Сохранить";
+        });
 }
 
 export function handleEditAvatarFormSubmit(evt) {
-    buttonSaveEditAvatar.textContent = " Сохранение..."
+    evt.submitter.textContent = "Сохранение..."
     evt.preventDefault();
     console.log(avatarProfile);
     console.log(evt);
@@ -72,26 +63,27 @@ export function handleEditAvatarFormSubmit(evt) {
         .then((res) => {
             avatarProfile.src = res.avatar;
             closePopup(popupEditAvatar);
-            buttonSaveEditAvatar.textContent = " Сохранить"
         })
-        .catch((err) => {
-            console.log(err);
-        })
+        .catch(console.error)
+        .finally(() => {
+            evt.submitter.textContent = "Сохранить";
+    });
 }
 
 export function handleAddCardFormSubmit(evt) {
-    buttonSaveAddCard.textContent = "Создание...";
+    evt.submitter.textContent = "Создание...";
     evt.preventDefault();
     postCreatedCard(inputNamePlaceCard.value, inputImgCard.value)
         .then((res) => {
             addCard(createCard(res));
             formElementAddCard.reset();
+            enableValidation ();
             closePopup(popupAddCard);
-            buttonSaveAddCard.textContent = "Создать";
         })
-        .catch((err) => {
-            console.log(err);
-        })
+        .catch(console.error)
+        .finally(() => {
+            evt.submitter.textContent = "Создать";
+        });
 }
 
 export function openPopupOnClickImage(card) {
@@ -102,21 +94,17 @@ export function openPopupOnClickImage(card) {
 }
 
 function closeByEsc(evt) {
-    if (evt.keyCode === 27) {
+    if (evt.key === "Escape") {
         const openedPopup = document.querySelector('.popup_opened');
         closePopup(openedPopup);
     }
 }
 
-function closePopupOverlay(popup) {
-    closePopup(popup);
-}
-
-const popupsOverlay = document.querySelectorAll('.popup');
-popupsOverlay.forEach(popup => {
+const popups = document.querySelectorAll('.popup');
+popups.forEach(popup => {
     popup.addEventListener('mousedown', (evt) => {
         if (evt.target.classList.contains('popup')) {
-            closePopupOverlay(popup);
+            closePopup(popup);
         }
     });
 });

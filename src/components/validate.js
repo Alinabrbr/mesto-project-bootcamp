@@ -1,22 +1,22 @@
-function showErrorMessage (inputElement, errorMessage) {
+function showErrorMessage (inputElement, errorMessage, settings) {
     const spanId = 'error-' + inputElement.id;
     const spanItem = document.getElementById(spanId);
     spanItem.textContent = errorMessage;
-    inputElement.classList.add('popup__input_type_error');
+    inputElement.classList.add(settings.inputErrorClass);
 }
 
-function hideErrorMessage (inputElement) {
+function hideErrorMessage (inputElement, settings) {
     const spanId = 'error-' + inputElement.id;
     const spanItem = document.getElementById(spanId);
     spanItem.textContent = ' ';
-    inputElement.classList.remove('popup__input_type_error');
+    inputElement.classList.remove(settings.inputErrorClass);
 }
 
-function handleInput(inputElement) {
+function handleInput(inputElement, settings) {
     if(inputElement.validity.valid) {
-        hideErrorMessage(inputElement);
+        hideErrorMessage(inputElement, settings);
     } else {
-        showErrorMessage(inputElement, inputElement.validationMessage);
+        showErrorMessage(inputElement, inputElement.validationMessage, settings);
     }
 }
 
@@ -36,16 +36,16 @@ function checkValidForm(form, button) {
     }
 }
 
-export function enableValidation () {
-    const forms = document.querySelectorAll('.popup__form');
+export function enableValidation (settings) {
+    const forms = document.querySelectorAll(settings.formSelector);
     forms.forEach(form => {
-        const inputs = form.querySelectorAll('.popup__input');
-        const saveButton = form.querySelector('.popup__save-btn');
+        const inputs = form.querySelectorAll(settings.inputSelector);
+        const saveButton = form.querySelector(settings.submitButtonSelector);
         checkValidForm(form, saveButton);
         inputs.forEach(input => {
             input.addEventListener('input', () => {
-                checkValidForm(form, saveButton);
-                handleInput(input);
+                checkValidForm(form, saveButton, settings);
+                handleInput(input, settings);
             });
         });
     });
