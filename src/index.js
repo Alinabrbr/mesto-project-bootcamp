@@ -72,3 +72,12 @@ buttonCloseDeleteCard.addEventListener('click', () => closePopup(popupDeleteCard
 buttonEditAvatar.addEventListener('click', () => openPopup(popupEditAvatar));
 buttonClosePopupEditAvatar.addEventListener('click', () => closePopup(popupEditAvatar));
 formElementEditAvatar.addEventListener('submit', handleEditAvatarFormSubmit);
+
+const popups = document.querySelectorAll('.popup');
+popups.forEach(popup => {
+    popup.addEventListener('mousedown', (evt) => {
+        if (evt.target.classList.contains('popup')) {
+            closePopup(popup);
+        }
+    });
+});
