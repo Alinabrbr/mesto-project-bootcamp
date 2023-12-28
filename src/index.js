@@ -34,8 +34,7 @@ import {
     formElementEditAvatar
 } from './components/constants.js';
 import {getInitialCards, getInitialProfile} from "./components/api";
-
-let userId;
+export let userId;
 
 Promise.all([getInitialProfile(), getInitialCards()])
     .then(([userData, cards]) => {

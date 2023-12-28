@@ -24,7 +24,7 @@ function enableButton(button) {
     button.disabled = false;
 }
 
-function disableButton(button) {
+export function disableButton(button) {
     button.disabled = true;
 }
 

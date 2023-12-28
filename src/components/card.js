@@ -49,7 +49,6 @@ export function createCard(card, userId) {
     }
 
     buttonDeleteCard.addEventListener('click', () => {
-        console.log(card._id);
         deleteCard(card._id)
             .then(() => {
                 newCard.remove();

@@ -15,7 +15,9 @@ import {
 
 import {patchEditAvatar, postCreatedCard, postEditProfileInfo} from './api.js';
 
-import {enableValidation} from './validate.js';
+import {disableButton} from './validate.js';
+
+import {userId} from '../index.js';
 
 const inputNamePlaceCard = document.getElementById('place');
 const inputImgCard = document.getElementById('link');
@@ -75,9 +77,9 @@ export function handleAddCardFormSubmit(evt) {
     evt.preventDefault();
     postCreatedCard(inputNamePlaceCard.value, inputImgCard.value)
         .then((res) => {
-            addCard(createCard(res));
+            addCard(createCard(res, userId));
             formElementAddCard.reset();
-            enableValidation ();
+            disableButton(evt.submitter);
             closePopup(popupAddCard);
         })
         .catch(console.error)
